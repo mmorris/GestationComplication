@@ -77,7 +77,10 @@
     CLKComplicationTemplateModularLargeStandardBody* template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
     template.headerTextProvider = [CLKSimpleTextProvider textProviderWithText:[self getHeader]];
     template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:[self getWeeksToTerm]];
-    template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:[self getTagline]];
+    template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:@"Due Sept. 17th"];
+    
+    // If you want a jokey tagline...
+    //template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:[self getTagline]];
     
     CLKComplicationTimelineEntry* timelineEntry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
     
@@ -99,7 +102,7 @@
 
 - (void)getNextRequestedUpdateDateWithHandler:(void(^)(__nullable NSDate *updateDate))handler {
     // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-    handler([NSDate dateWithTimeIntervalSinceNow:60*60]);
+    handler([NSDate dateWithTimeIntervalSinceNow:10]);
 }
 
 #pragma mark - Placeholder Templates
