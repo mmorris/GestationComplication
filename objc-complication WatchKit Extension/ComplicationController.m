@@ -77,6 +77,8 @@
     CLKComplicationTemplateModularLargeStandardBody* template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
     template.headerTextProvider = [CLKSimpleTextProvider textProviderWithText:[self getHeader]];
     template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:[self getWeeksToTerm]];
+    
+    // Edit this with your due date.
     template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:@"Due Sept. 17th"];
     
     // If you want a jokey tagline...
